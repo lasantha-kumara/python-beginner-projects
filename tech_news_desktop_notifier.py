@@ -24,11 +24,11 @@ def main():
         elif description == None:
             description = "Empty description"
 
-        # show every titles in articles for every 10 seconds
+        # show every titles in articles for every 8 seconds
         notification = notify2.Notification(
             f"{item_num}. {title}", description)
         notification.show()
-        time.sleep(10)
+        time.sleep(8)
 
         # after showing news notification add it to a txt file
         news = f"{item_num}. {title} {description}"
