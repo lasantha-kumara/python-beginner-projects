@@ -39,5 +39,7 @@ def main():
 
         item_num += 1
 
+    notification.close()
+
 
 main()
