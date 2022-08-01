@@ -35,8 +35,7 @@ def main():
         today = datetime.date.today()
 
         with open(f"Tech news {today}.txt", "a") as file:
-            file.write(news)
-            file.write("\n\n")
+            file.write(news + "\n\n")
 
         item_num += 1
 
