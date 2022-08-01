@@ -16,19 +16,30 @@ def main():
 
     # get weather data of current location using open weather api
     response = requests.get(
-        f"https://api.openweathermap.org/data/2.5/forecast?lat={latitude}&lon={longitude}&appid={API_KEY}&units=metric")
+        f"https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={API_KEY}&units=metric")
     weather_data = response.json()
-    print(weather_data)
 
     # show current weather notification
     notify2.init("Weather notification app")
 
-    # weather_condition = weather_data["weather"]["main"]
-    # temp = weather_data["main"]["temp"]
-    # message = f"Current temperature in {city_name} is {temp} and it"
+    weather_condition = weather_data["weather"][0]["main"]
+    weather = ""
+    if weather_condition == "Rain":
+        weather = "Rainy"
+    elif weather_condition == "Clouds":
+        weather = "Cloudy"
+    elif weather_condition == "Clear":
+        weather = "Sunny"
+    elif weather_condition == "Snow":
+        weather = "Snowy"
 
-    notification = notify2.Notification("Weather update", )
+    temp = weather_data["main"]["temp"]
+    message = f"Current temperature in {city_name} is {temp} and weather is {weather}"
+
+    notification = notify2.Notification("Weather update", message)
     notification.show()
+    # disappear notification after 10 seconds
+    notification.timeout = 10000
 
 
 main()
