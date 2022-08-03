@@ -28,16 +28,17 @@ def generate_random_cell(grid):
 
 
 def move(direction, grid):
-    temp_grid = grid
-    current_row = 0
-    current_column = 0
     if direction == 'w':
-        pass
+        # TODO
+        Pass
     elif direction == 's':
+        # TODO
         pass
     elif direction == 'a':
+        # TODO
         pass
     elif direction == 'd':
+        # TODO
         pass
     else:
         print("Wrong input.")
