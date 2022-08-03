@@ -30,7 +30,7 @@ def generate_random_cell(grid):
 def move(direction, grid):
     if direction == 'w':
         # TODO
-        Pass
+        pass
     elif direction == 's':
         # TODO
         pass
